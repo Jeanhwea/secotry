@@ -8,6 +8,7 @@ func findMedianSortedArrays_01(a []int, b []int) float64 {
 	return float64(findKth(a, b, total/2+1))
 }
 
+// 递归版
 func findKth(a, b []int, k int) int {
 	n, m := len(a), len(b)
 	if n > m {
@@ -33,25 +34,25 @@ func findKth(a, b []int, k int) int {
 	}
 }
 
+// 非递归版本
 func findKth_02(a, b []int, k int) int {
-	i, j := 0, 0
+	i, j, n, m := 0, 0, len(a), len(b)
 	for {
-		if i == len(a) {
+		if i == n {
 			return b[j+k-1]
 		}
-		if j == len(b) {
+		if j == m {
 			return a[i+k-1]
 		}
 		if k == 1 {
 			return min(a[i], b[j])
 		}
-		x := min(i+k/2, len(a)) - 1
-		y := min(j+k/2, len(b)) - 1
-		if a[x] <= b[y] {
-			k -= (x - i + 1)
+		x, y := min(i+k/2, n)-1, min(j+k/2, m)-1
+		if a[x] < b[y] {
+			k -= x - i + 1
 			i = x + 1
 		} else {
-			k -= (y - j + 1)
+			k -= y - j + 1
 			j = y + 1
 		}
 	}
@@ -66,19 +67,10 @@ func min(x, y int) int {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-func findMedianSortedArrays(a []int, b []int) float64 {
-	n, m := len(a), len(b)
-	if n > m {
-		return findMedianSortedArrays(b, a)
-	}
-	k := (n + m) / 2
-
-	for i+j+2 < k {
-		gap := k - (i + j + 2)
-		i += gap / 2
-		if i >= n {
-			i = n - 1
-		}
-		j = k - i - 2
-	}
-}
+// func findMedianSortedArrays(a []int, b []int) float64 {
+//	n, m := len(a), len(b)
+//	if n > m {
+//		return findMedianSortedArrays(b, a)
+//	}
+//	k := (n + m) / 2
+// }

@@ -24,20 +24,27 @@ func Test_LC004_02(t *testing.T) {
 	}
 }
 
-func Test_LC004_03(t *testing.T) {
+// func Test_LC004_03(t *testing.T) {
+//	num1 := []int{1, 3}
+//	num2 := []int{2}
+//	val := findMedianSortedArrays(num1, num2)
+//	if val != 2 {
+//		t.FailNow()
+//	}
+// }
+
+// func Test_LC004_04(t *testing.T) {
+//	num1 := []int{1, 3}
+//	num2 := []int{2, 4}
+//	val := findMedianSortedArrays(num1, num2)
+//	if val != 2.5 {
+//		t.FailNow()
+//	}
+// }
+
+func Test_LC004_05(t *testing.T) {
 	num1 := []int{1, 3}
 	num2 := []int{2}
-	val := findMedianSortedArrays(num1, num2)
-	if val != 2 {
-		t.FailNow()
-	}
-}
-
-func Test_LC004_04(t *testing.T) {
-	num1 := []int{1, 3}
-	num2 := []int{2, 4}
-	val := findMedianSortedArrays(num1, num2)
-	if val != 2.5 {
-		t.FailNow()
-	}
+	val1 := findKth_02(num1, num2, 2)
+	t.Logf("val1 = %v", val1)
 }
