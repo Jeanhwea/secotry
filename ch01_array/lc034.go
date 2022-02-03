@@ -7,14 +7,14 @@ func searchRange(a []int, target int) []int {
 	for beg <= end {
 		mid := beg + (end-beg)/2
 		if a[mid] == target {
-			left, right := mid, mid
-			for left > beg && a[left-1] == target {
-				left--
+			leftMost, rightMost := mid, mid
+			for leftMost > beg && a[leftMost-1] == target {
+				leftMost--
 			}
-			for right < end && a[right+1] == target {
-				right++
+			for rightMost < end && a[rightMost+1] == target {
+				rightMost++
 			}
-			return []int{left, right}
+			return []int{leftMost, rightMost}
 		}
 		if a[mid] < target {
 			beg = mid + 1
