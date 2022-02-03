@@ -33,7 +33,8 @@
     + 使用二分查找，找到数值后再双向搜索
     + 可以使用 ~sort.SearchIns(...)~ 库函数辅助查找
   - [ ] [[https://leetcode-cn.com/problems/longest-consecutive-sequence/][LC128]] [[file:ch01_array/lc128.go][最长连续序列]]
-  - [ ] [[https://leetcode-cn.com/problems/two-sum/][LC001]] [[file:ch01_array/lc001.go][两数之和]]
+  - [X] [[https://leetcode-cn.com/problems/two-sum/][LC001]] [[file:ch01_array/lc001.go][两数之和]]
+    + 使用哈希表缓存
   - [ ] [[https://leetcode-cn.com/problems/3sum/][LC015]] [[file:ch01_array/lc015.go][三数之和]]
   - [ ] [[https://leetcode-cn.com/problems/3sum-closest/][LC016]] [[file:ch01_array/lc016.go][最接近的三数之和]]
   - [ ] [[https://leetcode-cn.com/problems/4sum/][LC018]] [[file:ch01_array/lc018.go][四数之和]]
