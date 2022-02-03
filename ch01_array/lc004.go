@@ -1,7 +1,5 @@
 package ch01_array
 
-import "math"
-
 func findMedianSortedArrays_01(a []int, b []int) float64 {
 	total := len(a) + len(b)
 	if total%2 == 0 {
@@ -58,13 +56,6 @@ func findKth_02(a, b []int, k int) int {
 			j = y + 1
 		}
 	}
-}
-
-func min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
 }
 
 ////////////////////////////////////////////////////////////////////////////////
