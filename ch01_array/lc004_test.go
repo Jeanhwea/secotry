@@ -32,3 +32,12 @@ func Test_LC004_03(t *testing.T) {
 		t.FailNow()
 	}
 }
+
+func Test_LC004_04(t *testing.T) {
+	num1 := []int{1, 3}
+	num2 := []int{2, 4}
+	val := findMedianSortedArrays(num1, num2)
+	if val != 2.5 {
+		t.FailNow()
+	}
+}

@@ -18,11 +18,7 @@ func findKth(a, b []int, k int) int {
 		return b[k-1]
 	}
 	if k <= 1 {
-		if b[0] < a[0] {
-			return b[0]
-		} else {
-			return a[0]
-		}
+		return min(a[0], b[0])
 	}
 
 	i := k/2 - 1
@@ -35,4 +31,11 @@ func findKth(a, b []int, k int) int {
 	} else {
 		return findKth(a, b[j+1:], k-j-1)
 	}
+}
+
+func min(x, y int) int {
+	if x < y {
+		return x
+	}
+	return y
 }
