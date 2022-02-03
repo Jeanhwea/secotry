@@ -45,14 +45,14 @@ func findKth_02(a, b []int, k int) int {
 		if k == 1 {
 			return min(a[i], b[j])
 		}
-		i2 := min(i+k/2, len(a)) - 1
-		j2 := min(j+k/2, len(b)) - 1
-		if a[i2] <= b[j2] {
-			k -= (i2 - i + 1)
-			i = i2 + 1
+		x := min(i+k/2, len(a)) - 1
+		y := min(j+k/2, len(b)) - 1
+		if a[x] <= b[y] {
+			k -= (x - i + 1)
+			i = x + 1
 		} else {
-			k -= (j2 - j + 1)
-			j = j2 + 1
+			k -= (y - j + 1)
+			j = y + 1
 		}
 	}
 }
