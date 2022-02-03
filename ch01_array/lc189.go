@@ -3,24 +3,39 @@ package ch01_array
 func rotate_01(a []int, k int) {
 	n := len(a)
 	b := make([]int, n)
-	for i := 0; i < n; i++ {
-		b[(i+k)%n] = a[i]
+	for i, v := range a {
+		b[(i+k)%n] = v
 	}
-
-	for i := 0; i < n; i++ {
-		a[i] = b[i]
-	}
+	copy(a, b)
 }
 
 func rotate_02(a []int, k int) {
-	n, k := len(a), k%(len(a))
-	for i := 0; i < n/2; i++ {
-		a[i], a[n-i-1] = a[n-i-1], a[i]
+	reverse := func(a []int) {
+		for i, n := 0, len(a); i < n/2; i++ {
+			a[i], a[n-i-1] = a[n-i-1], a[i]
+		}
 	}
-	for i := 0; i < k/2; i++ {
-		a[i], a[k-i-1] = a[k-i-1], a[i]
+	k = k % (len(a))
+	reverse(a)
+	reverse(a[:k])
+	reverse(a[k:])
+}
+
+func rotate_03(a []int, k int) {
+	// 辗转相除法求最大公约数
+	gcd := func(a, b int) int {
+		for a != 0 {
+			a, b = a%b, a
+		}
+		return a
 	}
-	for i := 0; i < (n-k)/2; i++ {
-		a[k+i], a[n-i-1] = a[n-i-1], a[k+i]
+	n := len(a)
+	k %= n
+	for first, count := 0, gcd(k, n); first < count; first++ {
+		pre, curr := a[first], first
+		for ok := true; ok; ok = curr != first {
+			next := (curr + k) % n
+			a[next], pre, curr = pre, a[next], next
+		}
 	}
 }
