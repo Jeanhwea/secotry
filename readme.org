@@ -5,9 +5,9 @@
 
 
 * 数组 Array
-  - [X] [[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/][LC026]] [[file:ch01_array/lc026.go][删除有序数组中的重复项]]
-  - [X] [[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/][LC080]] [[file:ch01_array/lc080.go][删除有序数组中的重复项 II]]
-  - [X] [[https://leetcode-cn.com/problems/search-in-rotated-sorted-array/][LC033]] [[file:ch01_array/lc033.go][搜索旋转排序数组]]
+  - [X] [[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/][LC026]] [[file:ch01_array/lc026.go][删除有序数组中的重复项]] a[k] 记录最后一个相同的数字，每次比较 a[i] 和 a[k] 是否相同来进行判断，最后 k 即使 len-1
+  - [X] [[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/][LC080]] [[file:ch01_array/lc080.go][删除有序数组中的重复项 II]] 和上题类似，可以比较 a[i] 和 a[k] 以及 a[k-1] 是否相同
+  - [X] [[https://leetcode-cn.com/problems/search-in-rotated-sorted-array/][LC033]] [[file:ch01_array/lc033.go][搜索旋转排序数组]] 由于值互不相同，采用二分查找，注意下标的处理
   - [X] [[https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/][LC081]] [[file:ch01_array/lc081.go][搜索旋转排序数组 II]]
   - [X] [[https://leetcode-cn.com/problems/rotate-array/][LC189]] [[file:ch01_array/lc189.go][旋转数组]]
   - [X] [[https://leetcode-cn.com/problems/median-of-two-sorted-arrays/][LC004]] [[file:ch01_array/lc004.go][寻找两个正序数组的中位数]]
