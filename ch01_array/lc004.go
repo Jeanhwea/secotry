@@ -64,6 +64,7 @@ func findKth_02(a, b []int, k int) int {
 
 func findMedianSortedArrays(a []int, b []int) float64 {
 	n, m := len(a), len(b)
+	// 选择短的那个能够使时间复杂度变为 O(log(min(m,n)))
 	if n > m {
 		return findMedianSortedArrays(b, a)
 	}
