@@ -67,6 +67,7 @@ func findMedianSortedArrays(a []int, b []int) float64 {
 	if n > m {
 		return findMedianSortedArrays(b, a)
 	}
+
 	beg, end, leftMaxVal, rightMinVal := 0, n, 0, 0
 	for beg <= end {
 		// i+j == (m+n+1)/2 使得 a[0..i] + b[0..j] 刚好是 a[..] 并 b[..] 总元素的一半
