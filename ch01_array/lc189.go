@@ -23,11 +23,11 @@ func rotate_02(a []int, k int) {
 
 func rotate_03(a []int, k int) {
 	// 辗转相除法求最大公约数
-	gcd := func(a, b int) int {
-		for a != 0 {
-			a, b = a%b, a
+	gcd := func(x, y int) int {
+		for x != 0 {
+			x, y = y%x, x
 		}
-		return a
+		return y
 	}
 	n := len(a)
 	k %= n
