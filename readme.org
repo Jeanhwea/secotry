@@ -4,6 +4,13 @@
 #+DATE: <2022-02-03 Thu 15:23:25>
 
 
+"Talk is Cheap, Show Me the Code" by Linus Torvalds
+
+众所周知，编码能力如习作，不可一日而成，需反复练习，推敲琢磨，日积月累，方成大器。
+故本仓库汇集笔者再刷 LeetCode 时的心得体会，其中也不妨借鉴大佬之精髓，希望大家共
+同进步，畅享编程之乐趣。
+
+
 * 数组 Array
   - [X] [[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/][LC026]] [[file:ch01_array/lc026.go][删除有序数组中的重复项]]
     + a[k] 记录最后一个相同的数字，每次比较 a[i] 和 a[k] 是否相同来进行判断，最
