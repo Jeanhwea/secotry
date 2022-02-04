@@ -7,36 +7,27 @@ import (
 
 func threeSumClosest(a []int, target int) int {
 	sort.Ints(a)
-	ans := math.MaxInt64
+	ans := math.MaxInt32
+	update := func(cur int) {
+		if abs(cur-target) < abs(ans-target) {
+			ans = cur
+		}
+	}
+
 	for i := 0; i < len(a); i++ {
-		k := len(a) - 1
-		for j := i + 1; j < len(a); j++ {
-			for j < k {
-				sum := a[i] + a[j] + a[k]
-				if sum > target {
-					if abs(ans-target) > abs(sum-target) {
-						ans = sum
-					}
-					k--
-				} else {
-					break
-				}
-			}
-			if j < k && a[i]+a[j]+a[k] == target {
+		j, k := i+1, len(a)-1
+		for j < k {
+			sum := a[i] + a[j] + a[k]
+			if sum == target {
 				return target
 			}
-			sum := a[i] + a[j] + a[k]
-			if abs(ans-target) > abs(sum-target) {
-				ans = sum
+			if sum > target {
+				k--
+			} else {
+				j++
 			}
+			update(sum)
 		}
 	}
 	return ans
-}
-
-func abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
 }

@@ -26,3 +26,33 @@ func threeSum(a []int) [][]int {
 	}
 	return ans
 }
+
+func threeSum_02(a []int) [][]int {
+	sort.Ints(a)
+	var ans [][]int
+
+	for i := 0; i < len(a); i++ {
+		if i != 0 && a[i-1] == a[i] {
+			continue
+		}
+		// 使用双指针来查找
+		j, k := i+1, len(a)-1
+		for j < k {
+			if j != i+1 && a[j-1] == a[j] {
+				j++
+				continue
+			}
+			sum := a[i] + a[j] + a[k]
+			if sum == 0 {
+				ans = append(ans, []int{a[i], a[j], a[k]})
+			}
+			if sum > 0 {
+				k--
+			} else {
+				j++
+			}
+		}
+	}
+
+	return ans
+}

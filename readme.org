@@ -52,7 +52,9 @@
       2. 后续两个值相当于解 twoSum 问题，sum 值大移动后指针，sum 值小移动后指针
     + 注意跳过重复元素的处理
     + 排序时间复杂度 ~O(N)~, 查找时间复杂度 ~O(N^2)~, 综合时间复杂度 ~O(N^2)~
-  - [ ] [[https://leetcode-cn.com/problems/3sum-closest/][LC016]] [[file:ch01_array/lc016.go][最接近的三数之和]]
+  - [X] [[https://leetcode-cn.com/problems/3sum-closest/][LC016]] [[file:ch01_array/lc016.go][最接近的三数之和]]
+    + 和上述解题思路类似，主要是需要编写一个 update() 函数来方便操作
+    + 另外，整数的最大值取 ~math.MaxInt64~ 会导致溢出
   - [ ] [[https://leetcode-cn.com/problems/4sum/][LC018]] [[file:ch01_array/lc018.go][四数之和]]
   - [ ] [[https://leetcode-cn.com/problems/remove-element/][LC027]] [[file:ch01_array/lc027.go][移除元素]]
   - [ ] [[https://leetcode-cn.com/problems/next-permutation/][LC031]] [[file:ch01_array/lc031.go][下一个排列]] 固定算法，两遍扫描后翻转
