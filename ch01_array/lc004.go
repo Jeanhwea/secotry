@@ -2,6 +2,7 @@ package ch01_array
 
 import "math"
 
+// 找第 k 小数法
 func findMedianSortedArrays_01(a []int, b []int) float64 {
 	total := len(a) + len(b)
 	if total%2 == 0 {
@@ -49,6 +50,7 @@ func findKth_02(a, b []int, k int) int {
 		if k == 1 {
 			return min(a[i], b[j])
 		}
+
 		x, y := min(i+k/2, n)-1, min(j+k/2, m)-1
 		if a[x] < b[y] {
 			k -= x - i + 1
@@ -60,6 +62,7 @@ func findKth_02(a, b []int, k int) int {
 	}
 }
 
+// 划分集合法
 func findMedianSortedArrays(a []int, b []int) float64 {
 	n, m := len(a), len(b)
 	// 选择短的进行二分查找能够使时间复杂度变为 O(log(min(m,n)))
