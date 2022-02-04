@@ -1,4 +1,4 @@
-#+TITLE: SECOTRY
+#+TITLE: SECOTRY - A LeetCode Problem with Solutions by Golang
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: <2022-02-03 Thu 15:23:25>
