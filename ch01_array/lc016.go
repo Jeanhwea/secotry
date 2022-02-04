@@ -8,11 +8,6 @@ import (
 func threeSumClosest(a []int, target int) int {
 	sort.Ints(a)
 	ans := math.MaxInt32
-	update := func(cur int) {
-		if abs(cur-target) < abs(ans-target) {
-			ans = cur
-		}
-	}
 
 	for i := 0; i < len(a); i++ {
 		j, k := i+1, len(a)-1
@@ -21,13 +16,16 @@ func threeSumClosest(a []int, target int) int {
 			if sum == target {
 				return target
 			}
+			if abs(sum-target) < abs(ans-target) {
+				ans = sum
+			}
 			if sum > target {
 				k--
 			} else {
 				j++
 			}
-			update(sum)
 		}
 	}
+
 	return ans
 }
