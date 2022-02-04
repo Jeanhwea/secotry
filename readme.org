@@ -40,6 +40,11 @@
   - [X] [[https://leetcode-cn.com/problems/two-sum/][LC001]] [[file:ch01_array/lc001.go][两数之和]]
     + 使用哈希表缓存，时间复杂度 ~O(n)~
   - [ ] [[https://leetcode-cn.com/problems/3sum/][LC015]] [[file:ch01_array/lc015.go][三数之和]]
+    + 排序数组后使用双指针查找对应值
+      1. 首先固定起始值 a[i]
+      2. 后续两个值相当于解 twoSum 问题，sum 值大移动后指针，sum 值小移动后指针
+    + 注意跳过重复元素的处理
+    + 排序时间复杂度 ~O(n)~, 查找时间复杂度 ~O(n^2)~, 综合时间复杂度 ~O(n^2)~
   - [ ] [[https://leetcode-cn.com/problems/3sum-closest/][LC016]] [[file:ch01_array/lc016.go][最接近的三数之和]]
   - [ ] [[https://leetcode-cn.com/problems/4sum/][LC018]] [[file:ch01_array/lc018.go][四数之和]]
   - [ ] [[https://leetcode-cn.com/problems/remove-element/][LC027]] [[file:ch01_array/lc027.go][移除元素]]
