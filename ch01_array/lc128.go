@@ -4,7 +4,6 @@ import (
 	"sort"
 )
 
-// 100, 4, 200, 1, 3, 2
 func longestConsecutive(a []int) int {
 	cache := map[int]bool{}
 	for _, v := range a {
