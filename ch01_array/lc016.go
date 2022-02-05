@@ -5,14 +5,14 @@ import (
 	"sort"
 )
 
-func threeSumClosest(a []int, target int) int {
-	sort.Ints(a)
+func threeSumClosest(nums []int, target int) int {
+	sort.Ints(nums)
 	ans := math.MaxInt32
 
-	for i := 0; i < len(a); i++ {
-		j, k := i+1, len(a)-1
+	for i := 0; i < len(nums); i++ {
+		j, k := i+1, len(nums)-1
 		for j < k {
-			sum := a[i] + a[j] + a[k]
+			sum := nums[i] + nums[j] + nums[k]
 			if sum == target {
 				return target
 			}

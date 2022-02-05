@@ -55,7 +55,8 @@
   - [X] [[https://leetcode-cn.com/problems/3sum-closest/][LC016]] [[file:ch01_array/lc016.go][最接近的三数之和]]
     + 和上述解题思路类似，使用双指针来查找
     + 另外，整数的最大值取 ~math.MaxInt64~ 会导致溢出
-  - [ ] [[https://leetcode-cn.com/problems/4sum/][LC018]] [[file:ch01_array/lc018.go][四数之和]]
+  - [X] [[https://leetcode-cn.com/problems/4sum/][LC018]] [[file:ch01_array/lc018.go][四数之和]]
+    + 和上述 threeSum 类型，数组排序后固定 a[i] 和 a[j]，然后进行双指针查找求解即可
   - [ ] [[https://leetcode-cn.com/problems/remove-element/][LC027]] [[file:ch01_array/lc027.go][移除元素]]
   - [ ] [[https://leetcode-cn.com/problems/next-permutation/][LC031]] [[file:ch01_array/lc031.go][下一个排列]] 固定算法，两遍扫描后翻转
   - [ ] [[https://leetcode-cn.com/problems/permutation-sequence/][LC060]] [[file:ch01_array/lc060.go][排列顺序]]

@@ -4,47 +4,51 @@ import (
 	"sort"
 )
 
-func threeSum(a []int) [][]int {
-	sort.Ints(a)
+func threeSum(nums []int) [][]int {
+	sort.Ints(nums)
 	var ans [][]int
-	for i := 0; i < len(a); i++ {
-		if i != 0 && a[i-1] == a[i] {
+	for i := 0; i < len(nums); i++ {
+		if i != 0 && nums[i-1] == nums[i] {
 			continue
 		}
-		k := len(a) - 1
-		for j := i + 1; j < len(a); j++ {
-			if j != i+1 && a[j-1] == a[j] {
+		k := len(nums) - 1
+		for j := i + 1; j < len(nums); j++ {
+			if j != i+1 && nums[j-1] == nums[j] {
 				continue
 			}
-			for j < k && a[i]+a[j]+a[k] > 0 {
+			for j < k && nums[i]+nums[j]+nums[k] > 0 {
 				k--
 			}
-			if j < k && a[i]+a[j]+a[k] == 0 {
-				ans = append(ans, []int{a[i], a[j], a[k]})
+			if j < k && nums[i]+nums[j]+nums[k] == 0 {
+				ans = append(ans, []int{nums[i], nums[j], nums[k]})
 			}
 		}
 	}
 	return ans
 }
 
-func threeSum_02(a []int) [][]int {
-	sort.Ints(a)
+func threeSum_02(nums []int) [][]int {
 	var ans [][]int
+	if len(nums) < 3 {
+		return ans
+	}
 
-	for i := 0; i < len(a); i++ {
-		if i != 0 && a[i-1] == a[i] {
+	sort.Ints(nums)
+
+	for i := 0; i < len(nums); i++ {
+		if i != 0 && nums[i-1] == nums[i] {
 			continue
 		}
 		// 使用双指针来查找
-		j, k := i+1, len(a)-1
+		j, k := i+1, len(nums)-1
 		for j < k {
-			if j != i+1 && a[j-1] == a[j] {
+			if j != i+1 && nums[j-1] == nums[j] {
 				j++
 				continue
 			}
-			sum := a[i] + a[j] + a[k]
+			sum := nums[i] + nums[j] + nums[k]
 			if sum == 0 {
-				ans = append(ans, []int{a[i], a[j], a[k]})
+				ans = append(ans, []int{nums[i], nums[j], nums[k]})
 			}
 			if sum > 0 {
 				k--
