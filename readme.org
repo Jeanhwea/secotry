@@ -12,6 +12,8 @@
 
 
 * 数组 Array
+  - [X] [[https://leetcode-cn.com/problems/remove-element/][LC027]] [[file:ch01_array/lc027.go][移除元素]]
+    + 一遍变量赋值, ~O(N)~
   - [X] [[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/][LC026]] [[file:ch01_array/lc026.go][删除有序数组中的重复项]]
     + a[k] 记录最后一个相同的数字，每次比较 a[i] 和 a[k] 是否相同来进行判断，最
       后 k 即使 len-1
@@ -62,7 +64,6 @@
   - [X] [[https://leetcode-cn.com/problems/4sum/][LC018]] [[file:ch01_array/lc018.go][四数之和]]
     + 和上述 threeSum 类型，数组排序后固定 a[i] 和 a[j]，然后进行双指针查找求解即可
     + 时间复杂度 ~O(N^3)~
-  - [ ] [[https://leetcode-cn.com/problems/remove-element/][LC027]] [[file:ch01_array/lc027.go][移除元素]]
   - [ ] [[https://leetcode-cn.com/problems/next-permutation/][LC031]] [[file:ch01_array/lc031.go][下一个排列]] 固定算法，两遍扫描后翻转
   - [ ] [[https://leetcode-cn.com/problems/permutation-sequence/][LC060]] [[file:ch01_array/lc060.go][排列顺序]]
   - [ ] [[https://leetcode-cn.com/problems/valid-sudoku/][LC036]] [[file:ch01_array/lc036.go][有效的数独]]
