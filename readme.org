@@ -21,6 +21,9 @@
   - [X] [[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/][LC080]] [[file:ch01_array/lc080.go][删除有序数组中的重复项 II]]
     + 和上题类似，可以比较 a[i] 和 a[k] 以及 a[k-1] 是否相同
     + 时间复杂度 ~O(N)~
+  - [X] [[https://leetcode-cn.com/problems/plus-one/][LC066]] [[file:ch01_array/lc066.go][加一]]
+    + 复习一下小学学习的竖式计算
+    + 时间复杂度 ~O(N)~
   - [X] [[https://leetcode-cn.com/problems/search-in-rotated-sorted-array/][LC033]] [[file:ch01_array/lc033.go][搜索旋转排序数组]]
     + 由于值互不相同，采用二分查找，注意下标的处理
     + 数组二分，必有一半有序，判断 target 是否在有序数组里
@@ -64,13 +67,16 @@
   - [X] [[https://leetcode-cn.com/problems/4sum/][LC018]] [[file:ch01_array/lc018.go][四数之和]]
     + 和上述 threeSum 类型，数组排序后固定 a[i] 和 a[j]，然后进行双指针查找求解即可
     + 时间复杂度 ~O(N^3)~
-  - [ ] [[https://leetcode-cn.com/problems/next-permutation/][LC031]] [[file:ch01_array/lc031.go][下一个排列]] 固定算法，两遍扫描后翻转
+  - [X] [[https://leetcode-cn.com/problems/next-permutation/][LC031]] [[file:ch01_array/lc031.go][下一个排列]]
+    + 固定算法，两遍扫描后翻转
+      1. 从右往左找到首次单调下降的位置，记做 i
+      2. 在 nums[i+1:] 中，从右往左早到大于 nums[i] 的元素 nums[j], 如果找到交换
+      3. 原地翻转 nums[i+1:]
   - [ ] [[https://leetcode-cn.com/problems/permutation-sequence/][LC060]] [[file:ch01_array/lc060.go][排列顺序]]
   - [ ] [[https://leetcode-cn.com/problems/valid-sudoku/][LC036]] [[file:ch01_array/lc036.go][有效的数独]]
   - [ ] [[https://leetcode-cn.com/problems/trapping-rain-water/][LC042]] [[file:ch01_array/lc042.go][接雨水]]
   - [ ] [[https://leetcode-cn.com/problems/spiral-matrix/][LC054]] [[file:ch01_array/lc054.go][螺旋矩阵]]
   - [ ] [[https://leetcode-cn.com/problems/rotate-image/][LC048]] [[file:ch01_array/lc048.go][旋转图像]]
-  - [ ] [[https://leetcode-cn.com/problems/plus-one/][LC066]] [[file:ch01_array/lc066.go][加一]]
   - [ ] [[https://leetcode-cn.com/problems/climbing-stairs/][LC070]] [[file:ch01_array/lc070.go][爬楼梯]]
   - [ ] [[https://leetcode-cn.com/problems/gray-code/][LC089]] [[file:ch01_array/lc089.go][格雷编码]]
   - [ ] [[https://leetcode-cn.com/problems/set-matrix-zeroes/][LC073]] [[file:ch01_array/lc073.go][矩阵置零]]
