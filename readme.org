@@ -67,6 +67,7 @@
   - [X] [[https://leetcode-cn.com/problems/4sum/][LC018]] [[file:ch01_array/lc018.go][四数之和]]
     + 和上述 threeSum 类型，数组排序后固定 a[i] 和 a[j]，然后进行双指针查找求解即可
     + 时间复杂度 ~O(N^3)~
+  - [ ] [[https://leetcode-cn.com/problems/gray-code/][LC089]] [[file:ch01_array/lc089.go][格雷编码]]
   - [X] [[https://leetcode-cn.com/problems/next-permutation/][LC031]] [[file:ch01_array/lc031.go][下一个排列]]
     + 固定算法，两遍扫描后翻转
       1. 从右往左找到首次单调下降的位置，记做 i
@@ -74,14 +75,15 @@
       3. 原地翻转 nums[i+1:]
   - [X] [[https://leetcode-cn.com/problems/permutation-sequence/][LC060]] [[file:ch01_array/lc060.go][排列顺序]]
     + 康托尔展开是全排列到自然数的印射，本题使用逆康托尔展开可以解开
-  - [ ] [[https://leetcode-cn.com/problems/valid-sudoku/][LC036]] [[file:ch01_array/lc036.go][有效的数独]]
+    + ~x = [An, ..., A1] * [(n-1)!, ..., 0!]'~, An 是构成 ~<a[n], a[i]>~ 逆序数
+      的数量
   - [ ] [[https://leetcode-cn.com/problems/trapping-rain-water/][LC042]] [[file:ch01_array/lc042.go][接雨水]]
+  - [ ] [[https://leetcode-cn.com/problems/valid-sudoku/][LC036]] [[file:ch01_array/lc036.go][有效的数独]]
   - [ ] [[https://leetcode-cn.com/problems/spiral-matrix/][LC054]] [[file:ch01_array/lc054.go][螺旋矩阵]]
   - [ ] [[https://leetcode-cn.com/problems/rotate-image/][LC048]] [[file:ch01_array/lc048.go][旋转图像]]
-  - [ ] [[https://leetcode-cn.com/problems/climbing-stairs/][LC070]] [[file:ch01_array/lc070.go][爬楼梯]]
-  - [ ] [[https://leetcode-cn.com/problems/gray-code/][LC089]] [[file:ch01_array/lc089.go][格雷编码]]
   - [ ] [[https://leetcode-cn.com/problems/set-matrix-zeroes/][LC073]] [[file:ch01_array/lc073.go][矩阵置零]]
   - [ ] [[https://leetcode-cn.com/problems/gas-station/][LC134]] [[file:ch01_array/lc134.go][加油站]]
+  - [ ] [[https://leetcode-cn.com/problems/climbing-stairs/][LC070]] [[file:ch01_array/lc070.go][爬楼梯]]
   - [ ] [[https://leetcode-cn.com/problems/candy/][LC135]] [[file:ch01_array/lc135.go][分发糖果]]
   - [ ] [[https://leetcode-cn.com/problems/single-number/][LC136]] [[file:ch01_array/lc136.go][只出现一次的数字]]
   - [ ] [[https://leetcode-cn.com/problems/single-number-ii/][LC137]] [[file:ch01_array/lc137.go][只出现一次的数字 II]]
