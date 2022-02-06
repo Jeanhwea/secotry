@@ -1,5 +1,6 @@
 package ch01_array
 
+// 动态规划法
 func trap(height []int) int {
 	n := len(height)
 	leftMax, rightMax := make([]int, n), make([]int, n)
@@ -18,6 +19,7 @@ func trap(height []int) int {
 	return ans
 }
 
+// 双指针法
 func trap_03(height []int) int {
 	i, j, leftMax, rightMax := 0, len(height)-1, 0, 0
 
