@@ -17,3 +17,21 @@ func trap(height []int) int {
 	}
 	return ans
 }
+
+func trap_03(height []int) int {
+	i, j, leftMax, rightMax := 0, len(height)-1, 0, 0
+
+	ans := 0
+	for i < j {
+		leftMax, rightMax = max(leftMax, height[i]), max(rightMax, height[j])
+		if height[i] < height[j] {
+			ans += leftMax - height[i]
+			i++
+		} else {
+			ans += rightMax - height[j]
+			j--
+		}
+	}
+
+	return ans
+}
