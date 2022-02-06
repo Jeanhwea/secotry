@@ -67,7 +67,8 @@
   - [X] [[https://leetcode-cn.com/problems/4sum/][LC018]] [[file:ch01_array/lc018.go][四数之和]]
     + 和上述 threeSum 类型，数组排序后固定 a[i] 和 a[j]，然后进行双指针查找求解即可
     + 时间复杂度 ~O(N^3)~
-  - [ ] [[https://leetcode-cn.com/problems/gray-code/][LC089]] [[file:ch01_array/lc089.go][格雷编码]]
+  - [X] [[https://leetcode-cn.com/problems/gray-code/][LC089]] [[file:ch01_array/lc089.go][格雷编码]]
+    + 根据格雷码的定义 ~code := (i>>1)^i~
   - [X] [[https://leetcode-cn.com/problems/next-permutation/][LC031]] [[file:ch01_array/lc031.go][下一个排列]]
     + 固定算法，两遍扫描后翻转
       1. 从右往左找到首次单调下降的位置，记做 i
