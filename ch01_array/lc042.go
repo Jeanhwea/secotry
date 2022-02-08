@@ -25,7 +25,7 @@ func trap_02(height []int) int {
 	for i, h := range height {
 		for len(stack) > 0 && height[stack[len(stack)-1]] < h {
 			top := stack[len(stack)-1]
-			stack = stack[:top]
+			stack = stack[:len(stack)-1]
 			if len(stack) > 0 {
 				left := stack[len(stack)-1]
 				currWidth, currHeight := i-left-1, min(height[left], h)-height[top]
