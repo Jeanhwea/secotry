@@ -19,6 +19,23 @@ func trap(height []int) int {
 	return ans
 }
 
+// 单调栈
+func trap_02(height []int) int {
+	stack, ans := []int{}, 0
+	for i, h := range height {
+		for len(stack) > 0 && height[stack[len(stack)-1]] > h {
+			top := stack[len(stack)-1]
+			stack = stack[:top]
+			if len(stack) > 0 {
+				left := stack[len(stack)-1]
+				ans += (i - left + 1) * min(height[left], h)
+			}
+		}
+		stack = append(stack, i)
+	}
+	return ans
+}
+
 // 双指针法
 func trap_03(height []int) int {
 	i, j, leftMax, rightMax := 0, len(height)-1, 0, 0
