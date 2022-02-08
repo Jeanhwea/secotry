@@ -23,12 +23,13 @@ func trap(height []int) int {
 func trap_02(height []int) int {
 	stack, ans := []int{}, 0
 	for i, h := range height {
-		for len(stack) > 0 && height[stack[len(stack)-1]] > h {
+		for len(stack) > 0 && height[stack[len(stack)-1]] < h {
 			top := stack[len(stack)-1]
 			stack = stack[:top]
 			if len(stack) > 0 {
 				left := stack[len(stack)-1]
-				ans += (i - left + 1) * min(height[left], h)
+				currWidth, currHeight := i-left-1, min(height[left], h)-height[top]
+				ans += currWidth * currHeight
 			}
 		}
 		stack = append(stack, i)
