@@ -13,7 +13,8 @@ func TestTime01(t *testing.T) {
 }
 
 func TestTime02(t *testing.T) {
-	t.Logf("%v", time.Millisecond)
-	t.Logf("%v", time.Microsecond)
-	t.Logf("%v", time.Nanosecond)
+	t.Logf("%v", time.Second)      // 1s = 1000ms
+	t.Logf("%v", time.Millisecond) // 1ms = 1000us
+	t.Logf("%v", time.Microsecond) // 1us = 1000ns
+	t.Logf("%v", time.Nanosecond)  // 1ns
 }
