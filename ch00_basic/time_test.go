@@ -18,3 +18,9 @@ func TestTime02(t *testing.T) {
 	t.Logf("%v", time.Microsecond) // 1us = 1000ns
 	t.Logf("%v", time.Nanosecond)  // 1ns
 }
+
+func TestTime03(t *testing.T) {
+	t.Logf("%s", time.Now().Format(time.RFC3339))
+	t.Logf("%s", time.Now().Format("2006-01-02 15:04:05.000"))
+
+}
