@@ -18,3 +18,20 @@ func TestArray02(t *testing.T) {
 	a = append(a, 3)
 	t.Logf("a = %v", a)
 }
+
+func TestArray03(t *testing.T) {
+	arr := []string{"s1", "s2", "s3", "s4", "s5"}
+	remove := []string{"s1", "s4"}
+loop:
+	for i := 0; i < len(arr); i++ {
+		url := arr[i]
+		for _, rem := range remove {
+			if url == rem {
+				arr = append(arr[:i], arr[i+1:]...)
+				i--
+				continue loop
+			}
+		}
+	}
+	t.Logf("arr = %v", arr)
+}
