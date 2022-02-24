@@ -24,3 +24,10 @@ func TestTime03(t *testing.T) {
 	t.Logf("%s", time.Now().Format("2006-01-02 15:04:05.000"))
 
 }
+
+func TestTime04(t *testing.T) {
+	a := time.Now().UnixNano()
+	time.Sleep(1)
+	b := time.Now().UnixNano()
+	t.Logf("%v", int((b-a)/1000))
+}

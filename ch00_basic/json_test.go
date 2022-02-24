@@ -9,16 +9,18 @@ import (
 )
 
 type Book struct {
-	Name      string  `json:"Name"`
-	PageCount int     `json:"PageCount"`
-	Price     float64 `json:"Price"`
+	Name       string   `json:"Name"`
+	PageCount  int      `json:"PageCount"`
+	Price      float64  `json:"Price"`
+	AuthorList []string `json:"Author,omitempty"`
 }
 
 func TestJson01(t *testing.T) {
 	book01 := &Book{
-		Name:      "A Litte Store",
-		PageCount: 238,
-		Price:     43.9,
+		Name:       "A Litte Store",
+		PageCount:  238,
+		Price:      43.9,
+		AuthorList: []string{"Tom"},
 	}
 	str, _ := json.Marshal(book01)
 	t.Logf("str = %s", str)
@@ -36,5 +38,5 @@ func TestJson02(t *testing.T) {
 	// os.WriteFile(fmt.Sprintf("/tmp/json-key-%08d.json", keyCount), bytes, 0644)
 
 	str1 := strconv.Quote(string(bytes))
-	os.WriteFile(fmt.Sprintf("/tmp/key-tidy-%05d.json", keyCount), []byte(str1), 0644)
+	os.WriteFile(fmt.Sprintf("/tmp/key-tidy-%05d.txt", keyCount), []byte(str1), 0644)
 }
