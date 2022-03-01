@@ -26,21 +26,6 @@ func TestJson01(t *testing.T) {
 	t.Logf("str = %s", str)
 }
 
-func TestJson02(t *testing.T) {
-	obj := make(map[string]string)
-	keyCount := 10000
-	for i := 0; i < keyCount; i++ {
-		key, val := fmt.Sprintf("k%08v", i), fmt.Sprintf("v%08v", i)
-		obj[key] = val
-	}
-
-	bytes, _ := json.Marshal(obj)
-	// os.WriteFile(fmt.Sprintf("/tmp/json-key-%08d.json", keyCount), bytes, 0644)
-
-	str1 := strconv.Quote(string(bytes))
-	os.WriteFile(fmt.Sprintf("/tmp/key-tidy-%05d.txt", keyCount), []byte(str1), 0644)
-}
-
 func prettifyJson(src []byte) (dest string) {
 	var obj map[string]interface{}
 	json.Unmarshal(src, &obj)
@@ -56,7 +41,7 @@ type Dog struct {
 	JsonIgnore  string `json:"-"`
 }
 
-func TestJson03(t *testing.T) {
+func TestJson02(t *testing.T) {
 	str01 := `{"name":"Scott"}`
 	scott := &Dog{}
 
@@ -68,4 +53,33 @@ func TestJson03(t *testing.T) {
 
 	data, _ := json.Marshal(scott)
 	t.Log(prettifyJson(data))
+}
+
+func TestJson10(t *testing.T) {
+	obj := make(map[string]string)
+	keyCount := 10000
+	for i := 0; i < keyCount; i++ {
+		key, val := fmt.Sprintf("k%08v", i), fmt.Sprintf("v%08v", i)
+		obj[key] = val
+	}
+
+	bytes, _ := json.Marshal(obj)
+	// os.WriteFile(fmt.Sprintf("/tmp/json-key-%08d.json", keyCount), bytes, 0644)
+
+	str1 := strconv.Quote(string(bytes))
+	os.WriteFile(fmt.Sprintf("/tmp/key-tidy-%05d.txt", keyCount), []byte(str1), 0644)
+}
+
+func saveQuote(name string, obj interface{}) {
+	data, _ := json.Marshal(obj)
+	quoted := strconv.Quote(string(data))
+	os.WriteFile(name, []byte(quoted), 0644)
+}
+
+func TestJson11(t *testing.T) {
+	extra := map[string]interface{}{
+		"key01": 1,
+		"str01": "val01",
+	}
+	saveQuote("/tmp/data.txt", extra)
 }
