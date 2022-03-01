@@ -40,3 +40,32 @@ func TestJson02(t *testing.T) {
 	str1 := strconv.Quote(string(bytes))
 	os.WriteFile(fmt.Sprintf("/tmp/key-tidy-%05d.txt", keyCount), []byte(str1), 0644)
 }
+
+func prettifyJson(src []byte) (dest string) {
+	var obj map[string]interface{}
+	json.Unmarshal(src, &obj)
+	newBytes, _ := json.MarshalIndent(obj, "", "  ")
+	dest = string(newBytes)
+	return
+}
+
+type Dog struct {
+	Name        string `json:"name,omitempty"`
+	Age         int64  `json:"age,omitempty"`
+	Description string `json:"description,omitempty"`
+	JsonIgnore  string `json:"-"`
+}
+
+func TestJson03(t *testing.T) {
+	str01 := `{"name":"Scott"}`
+	scott := &Dog{}
+
+	json.Unmarshal([]byte(str01), scott)
+	scott.Age = 8
+	scott.JsonIgnore = "ignored field"
+	t.Logf("scott = %+v", scott)
+	t.Logf("scott = %+#v", scott)
+
+	data, _ := json.Marshal(scott)
+	t.Log(prettifyJson(data))
+}
