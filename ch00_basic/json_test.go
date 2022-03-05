@@ -77,9 +77,11 @@ func saveQuote(name string, obj interface{}) {
 }
 
 func TestJson11(t *testing.T) {
-	extra := map[string]interface{}{
-		"key01": 1,
-		"str01": "val01",
+	extra := make(map[string]interface{})
+	for i := 1; i <= 10; i++ {
+		key := fmt.Sprintf("key%04d", i)
+		val := fmt.Sprintf("val%04d", i)
+		extra[key] = val
 	}
 	saveQuote("/tmp/data.txt", extra)
 }
