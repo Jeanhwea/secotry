@@ -24,6 +24,10 @@ func TestJson01(t *testing.T) {
 	}
 	str, _ := json.Marshal(book01)
 	t.Logf("str = %s", str)
+
+	authors := []string{"aaa", "bbb"}
+	book01.AuthorList = authors
+	t.Logf("book01 = %+v", book01)
 }
 
 func prettifyJson(src []byte) (dest string) {
