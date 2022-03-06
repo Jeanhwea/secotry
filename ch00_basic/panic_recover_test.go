@@ -38,13 +38,17 @@ func re() interface{} {
 func TestPanicRecover02(t *testing.T) {
 	go func() {
 		defer func() {
-			if r := re(); r != nil {
-				//
+			if r := recover(); r != nil {
+				fmt.Println(r)
 			}
 		}()
 		// panic(2)
+		func() {
+			panic(3)
+		}()
 	}()
 
+	// panic(1)
 	time.Sleep(time.Second)
 }
 
