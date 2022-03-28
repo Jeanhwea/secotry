@@ -31,3 +31,11 @@ func TestTime04(t *testing.T) {
 	b := time.Now().UnixNano()
 	t.Logf("%v", int((b-a)/1000))
 }
+
+func TestTime05_CalculateElapseSecond(t *testing.T) {
+	Convey("TestTime05_CalculateElapseSecond", t, func() {
+		startTime := time.Now()
+		res, val := 1, 1
+		So(res, ShouldEqual, val)
+	})
+}
