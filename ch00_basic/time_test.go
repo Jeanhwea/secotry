@@ -33,9 +33,8 @@ func TestTime04(t *testing.T) {
 }
 
 func TestTime05_CalculateElapseSecond(t *testing.T) {
-	Convey("TestTime05_CalculateElapseSecond", t, func() {
-		startTime := time.Now()
-		res, val := 1, 1
-		So(res, ShouldEqual, val)
-	})
+	startTime := time.Now()
+	time.Sleep(1 * time.Second)
+	timeElapsed := time.Now().Sub(startTime).Seconds()
+	t.Logf("[TestTime05_CalculateElapseSecond] elapsed = %.2fs", timeElapsed)
 }
