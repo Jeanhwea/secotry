@@ -11,7 +11,8 @@ func TestRandom01(t *testing.T) {
 	for i := 0; i < 10000; i++ {
 		go func() {
 			for {
-				_ = rand.Intn(10000)
+				num := rand.Intn(10000)
+				t.Log(num)
 			}
 		}()
 	}
